@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Inscrições Missão Água - Barco Escola da Natureza
+    match /inscricoes/{inscricaoId} {
+      allow create: if request.resource.data.nomeCrianca is string &&
+                       request.resource.data.nomeResponsavel is string &&
+                       request.resource.data.whatsappResponsavel is string;
+      allow read, update, delete: if false;
+    }
+
+    // Contador sequencial de inscrições
+    match /config/{counterId} {
+      allow get: if true;
+      allow create, update: if request.resource.data.count is number && request.resource.data.count >= 0;
+      allow list, delete: if false;
+    }
+  }
+}

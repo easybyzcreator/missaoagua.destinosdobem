@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "Inscricao": {
+      "title": "Inscrição Missão Água - Barco Escola da Natureza",
+      "description": "Dados da inscrição da criança e responsável para o evento Missão Água",
+      "type": "object",
+      "properties": {
+        "nomeResponsavel": { "type": "string" },
+        "whatsappResponsavel": { "type": "string" },
+        "nomeCrianca": { "type": "string" },
+        "faixaEtariaCrianca": { "type": "string" },
+        "pcd": { "type": "string" },
+        "cadeiraDeRodas": { "type": "string" },
+        "necessitaAcessibilidade": { "type": "string" },
+        "acessibilidadeQual": { "type": "string" },
+        "confirmaPresenca": { "type": "boolean" },
+        "autorizacaoImagem": { "type": "string" },
+        "numeroInscricao": { "type": "number" },
+        "evento": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["nomeResponsavel", "whatsappResponsavel", "nomeCrianca", "faixaEtariaCrianca", "pcd", "cadeiraDeRodas", "necessitaAcessibilidade", "confirmaPresenca", "autorizacaoImagem"]
+    },
+    "Counter": {
+      "title": "Contador",
+      "description": "Contador sequencial de inscrições",
+      "type": "object",
+      "properties": {
+        "count": { "type": "number" }
+      },
+      "required": ["count"]
+    }
+  },
+  "firestore": {
+    "/inscricoes/{inscricaoId}": {
+      "schema": "Inscricao",
+      "description": "Coleção de inscrições para o evento Missão Água"
+    },
+    "/config/registrationCounter": {
+      "schema": "Counter",
+      "description": "Documento único para controle do contador sequencial"
+    }
+  }
+}

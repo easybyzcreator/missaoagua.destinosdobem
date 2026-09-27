@@ -1,0 +1,6 @@
+{
+  "name": "💧 MISSÃO ÁGUA | BARCO ESCOLA DA NATUREZA",
+  "description": "Cadastro para o Evento Missão Água - Barco Escola da Natureza | Comunidade Destinos do Bem",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
